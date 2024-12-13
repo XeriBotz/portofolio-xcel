@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Excel</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #1c92d2, #f2fcfe);
+            color: #333;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            text-transform: uppercase;
+            text-align: center;
+            animation: fadeInDown 1s ease;
+        }
+        ul {
+            padding-left: 20px;
+            list-style-type: square;
+        }
+        ul li {
+            margin: 10px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        blockquote {
+            font-style: italic;
+            color: #7f8c8d;
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        a {
+            color: #1c92d2;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Navigation Styling */
+        .nav {
+            background: #2c3e50;
+            padding: 15px;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .nav a {
+            color: #f2fcfe;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .nav a:hover {
+            color: #1c92d2;
+        }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background: #1c92d2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .btn:hover {
+            background: #145b9e;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #2c3e50;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Card Style */
+        .card {
+            background: #f2fcfe;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="container" style="margin-top: 80px;">
+        <h1>WELCOME TO MY PORTOFOLIO</h1>
+        <h2>NAME : EXCEL</h2>
+        <h2>CLASS : 11 TKJ</h2>
+        <hr>
+
+        <!-- About Me -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="card">
+                <p>I am a grade 11 Technical Computer and Networking (TKJ) student at SMK Yadika 3 Tegal Alur, passionate about information technology. I am committed to developing skills and mastering the latest technologies, particularly in computer networking, system management, and programming.</p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="card">
+                <ul>
+                    <li>Computer Networking: LAN installation, troubleshooting, server management.</li>
+                    <li>Programming: Basics of Python, HTML, and CSS.</li>
+                    <li>Advanced Microsoft Excel: Automation with macros and VBA.</li>
+                    <li>Cybersecurity: Basic knowledge of system protection and DDoS prevention.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="card">
+                <ul>
+                    <li>School Network Simulation: Designed efficient computer networks.</li>
+                    <li>Automated Attendance System: Created with Excel and VBA.</li>
+                    <li>Finalist in IT Competition: Network configuration at city level.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="card">
+                <p><strong>Phone:</strong> 0895326218661</p>
+                <p><strong>Email:</strong> <a href="mailto:excelrizky8@gmail.com">excelrizky8@gmail.com</a></p>
+            </div>
+            <a href="https://wa.me/62895326218661?text=HAI+BRO" class="btn">Call Me</a>
+            <a href="mailto:excelrizky8@gmail.com" class="btn">Email Me</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024-2025 Excel Darizq | Designed with Passion
+    </footer>
+</body>
+</html>
