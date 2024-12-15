@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reCAPTCHA - Verify</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="config.js"></script> <!-- Tambahkan file config.js -->
     <style>
-        /* General Styling */
+        /* Styling sama seperti sebelumnya */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -21,7 +22,6 @@
             position: relative;
         }
 
-        /* Moving LED Background */
         body::before {
             content: '';
             position: fixed;
@@ -40,7 +40,6 @@
             100% { transform: translate(0, 0); }
         }
 
-        /* Centered Container */
         .container {
             text-align: center;
             z-index: 1;
@@ -92,36 +91,32 @@
             box-shadow: 0 0 25px rgba(255, 152, 0, 1);
         }
 
-        /* Button Animation */
         .btn:active {
             transform: translateY(2px);
         }
     </style>
 </head>
 <body>
-
-    <!-- Full-page Animation with reCAPTCHA -->
     <div class="container">
         <h1>RECAPTCHA Verification</h1>
         <p>SEBELUM MASUK KE WEBSITE SILAHKAN LENGKAPI RECAPTCHA TERLEBIH DAHULU</p>
-        
-        <!-- reCAPTCHA -->
-        <div class="g-recaptcha" data-sitekey="6Lej2ZsqAAAAAChVurhU1J9eFIRe__-9yc6oPvbu"></div>
-
+        <div class="g-recaptcha" data-sitekey=""></div>
         <button class="btn" onclick="verifyRecaptcha()">Verify and Enter</button>
     </div>
 
     <script>
+        // Mengisi Site Key dari file config.js
+        document.querySelector(".g-recaptcha").setAttribute("data-sitekey", CONFIG.SITE_KEY);
+
+        // Verifikasi reCAPTCHA
         function verifyRecaptcha() {
             const recaptchaResponse = grecaptcha.getResponse();
             if (recaptchaResponse.length == 0) {
                 alert('TOLONG LENGKAPI RECAPTCHA😔☝️');
                 return;
             }
-            // Redirect to main page after verification
-            window.location.href = 'gg.html'; // Change this URL to your main page URL
+            window.location.href = 'gg.html'; // Ubah ke halaman tujuan Anda
         }
     </script>
-
 </body>
 </html>
