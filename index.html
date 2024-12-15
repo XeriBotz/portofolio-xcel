@@ -21,7 +21,6 @@
             position: relative;
         }
 
-        /* Moving LED Background */
         body::before {
             content: '';
             position: fixed;
@@ -40,7 +39,6 @@
             100% { transform: translate(0, 0); }
         }
 
-        /* Centered Container */
         .container {
             text-align: center;
             z-index: 1;
@@ -92,7 +90,6 @@
             box-shadow: 0 0 25px rgba(255, 152, 0, 1);
         }
 
-        /* Button Animation */
         .btn:active {
             transform: translateY(2px);
         }
@@ -100,28 +97,477 @@
 </head>
 <body>
 
-    <!-- Full-page Animation with reCAPTCHA -->
     <div class="container">
-        <h1>RECAPTCHA Verification</h1>
-        <p>SEBELUM MASUK KE WEBSITE SILAHKAN LENGKAPI RECAPTCHA TERLEBIH DAHULU</p>
+        <h1>WELCOME TO MY PORTOFOLIO</h1>
+        <p>sebelum masuk ke website lengkapi recaptcha dulu ya ~by excel</p>
         
-        <!-- reCAPTCHA -->
         <div class="g-recaptcha" data-sitekey="6Lej2ZsqAAAAAChVurhU1J9eFIRe__-9yc6oPvbu"></div>
 
         <button class="btn" onclick="verifyRecaptcha()">Verify and Enter</button>
     </div>
 
     <script>
+        // Disable Right Click
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // Disable Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+                (e.ctrlKey && e.shiftKey && e.key === 'J') || (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+
+        // Recaptcha Verification
         function verifyRecaptcha() {
             const recaptchaResponse = grecaptcha.getResponse();
             if (recaptchaResponse.length == 0) {
                 alert('TOLONG LENGKAPI RECAPTCHA😔☝️');
                 return;
             }
-            // Redirect to main page after verification
-            window.location.href = 'gg.html'; // Change this URL to your main page URL
+            window.location.href = 'gg.html';
         }
-    </script>
 
+        // Debugger Detection
+        setInterval(() => {
+            const start = new Date();
+            debugger;
+            const end = new Date();
+            if (end - start > 100) {
+                alert('Inspect element terdeteksi!');
+                window.location.href = 'about:blank';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reCAPTCHA - Verify</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #141E30, #243B55);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 0, 150, 0.2), rgba(0, 255, 234, 0.2), transparent);
+            animation: backgroundLED 10s infinite linear;
+            z-index: -1;
+        }
+
+        @keyframes backgroundLED {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255, 152, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7);
+            animation: containerGlow 3s infinite alternate;
+        }
+
+        @keyframes containerGlow {
+            0% { box-shadow: 0 0 10px rgba(255, 152, 0, 0.5); }
+            100% { box-shadow: 0 0 25px rgba(255, 152, 0, 1); }
+        }
+
+        h1 {
+            color: #ff9800;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .g-recaptcha {
+            display: inline-block;
+            box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 18px;
+            color: #fff;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 152, 0, 1);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>WELCOME TO MY PORTOFOLIO</h1>
+        <p>sebelum masuk ke website lengkapi recaptcha dulu ya ~by excel</p>
+        
+        <div class="g-recaptcha" data-sitekey="6Lej2ZsqAAAAAChVurhU1J9eFIRe__-9yc6oPvbu"></div>
+
+        <button class="btn" onclick="verifyRecaptcha()">Verify and Enter</button>
+    </div>
+
+    <script>
+        // Disable Right Click
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // Disable Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+                (e.ctrlKey && e.shiftKey && e.key === 'J') || (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+
+        // Recaptcha Verification
+        function verifyRecaptcha() {
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (recaptchaResponse.length == 0) {
+                alert('TOLONG LENGKAPI RECAPTCHA😔☝️');
+                return;
+            }
+            window.location.href = 'gg.html';
+        }
+
+        // Debugger Detection
+        setInterval(() => {
+            const start = new Date();
+            debugger;
+            const end = new Date();
+            if (end - start > 100) {
+                alert('Inspect element terdeteksi!');
+                window.location.href = 'about:blank';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reCAPTCHA - Verify</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #141E30, #243B55);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 0, 150, 0.2), rgba(0, 255, 234, 0.2), transparent);
+            animation: backgroundLED 10s infinite linear;
+            z-index: -1;
+        }
+
+        @keyframes backgroundLED {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255, 152, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7);
+            animation: containerGlow 3s infinite alternate;
+        }
+
+        @keyframes containerGlow {
+            0% { box-shadow: 0 0 10px rgba(255, 152, 0, 0.5); }
+            100% { box-shadow: 0 0 25px rgba(255, 152, 0, 1); }
+        }
+
+        h1 {
+            color: #ff9800;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .g-recaptcha {
+            display: inline-block;
+            box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 18px;
+            color: #fff;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 152, 0, 1);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>WELCOME TO MY PORTOFOLIO</h1>
+        <p>sebelum masuk ke website lengkapi recaptcha dulu ya ~by excel</p>
+        
+        <div class="g-recaptcha" data-sitekey="6Lej2ZsqAAAAAChVurhU1J9eFIRe__-9yc6oPvbu"></div>
+
+        <button class="btn" onclick="verifyRecaptcha()">Verify and Enter</button>
+    </div>
+
+    <script>
+        // Disable Right Click
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // Disable Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+                (e.ctrlKey && e.shiftKey && e.key === 'J') || (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+
+        // Recaptcha Ver<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reCAPTCHA - Verify</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #141E30, #243B55);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 0, 150, 0.2), rgba(0, 255, 234, 0.2), transparent);
+            animation: backgroundLED 10s infinite linear;
+            z-index: -1;
+        }
+
+        @keyframes backgroundLED {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255, 152, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7);
+            animation: containerGlow 3s infinite alternate;
+        }
+
+        @keyframes containerGlow {
+            0% { box-shadow: 0 0 10px rgba(255, 152, 0, 0.5); }
+            100% { box-shadow: 0 0 25px rgba(255, 152, 0, 1); }
+        }
+
+        h1 {
+            color: #ff9800;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .g-recaptcha {
+            display: inline-block;
+            box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 18px;
+            color: #fff;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 152, 0, 1);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>WELCOME TO MY PORTOFOLIO</h1>
+        <p>sebelum masuk ke website lengkapi recaptcha dulu ya ~by excel</p>
+        
+        <div class="g-recaptcha" data-sitekey="6Lej2ZsqAAAAAChVurhU1J9eFIRe__-9yc6oPvbu"></div>
+
+        <button class="btn" onclick="verifyRecaptcha()">Verify and Enter</button>
+    </div>
+
+    <script>
+        // Disable Right Click
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // Disable Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+                (e.ctrlKey && e.shiftKey && e.key === 'J') || (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+
+        // Recaptcha Verification
+        function verifyRecaptcha() {
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (recaptchaResponse.length == 0) {
+                alert('TOLONG LENGKAPI RECAPTCHA😔☝️');
+                return;
+            }
+            window.location.href = 'gg.html';
+        }
+
+        // Debugger Detection
+        setInterval(() => {
+            const start = new Date();
+            debugger;
+            const end = new Date();
+            if (end - start > 100) {
+                alert('Inspect element terdeteksi!');
+                window.location.href = 'about:blank';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+ification
+        function verifyRecaptcha() {
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (recaptchaResponse.length == 0) {
+                alert('TOLONG LENGKAPI RECAPTCHA😔☝️');
+                return;
+            }
+            window.location.href = 'gg.html';
+        }
+
+        // Debugger Detection
+        setInterval(() => {
+            const start = new Date();
+            debugger;
+            const end = new Date();
+            if (end - start > 100) {
+                alert('Inspect element terdeteksi!');
+                window.location.href = 'about:blank';
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
