@@ -114,7 +114,7 @@
         fetch('config.json')
             .then(response => response.json())
             .then(config => {
-                const siteKey = config.siteKey;
+                const siteKey = siteKey;
                 document.getElementById('recaptcha-container').innerHTML = `<div class="g-recaptcha" data-sitekey="${siteKey}"></div>`;
             })
             .catch(error => {
