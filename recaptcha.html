@@ -1,0 +1,14 @@
+<!-- recaptcha.html -->
+<div class="g-recaptcha" data-sitekey="6Lej2ZsqAAAAAChVurhU1J9eFIRe__-9yc6oPvbu"></div>
+<button class="btn" onclick="verifyRecaptcha()">Verify and Enter</button>
+
+<script>
+    function verifyRecaptcha() {
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (recaptchaResponse.length == 0) {
+            alert('TOLONG LENGKAPI RECAPTCHA😔☝️');
+            return;
+        }
+        window.location.href = 'gg.html'; // Change this URL to your main page URL
+    }
+</script>
