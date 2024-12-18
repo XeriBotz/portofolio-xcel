@@ -1,0 +1,168 @@
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0f1f, #1e1e2f);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+}
+
+/* Wrapper untuk memastikan konten tidak menutupi footer */
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Game Container */
+.game-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Game Title */
+.game-item {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: bold;
+    color: #00ffea;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: textGlow 3s infinite alternate;
+}
+
+/* Text Glow Animation */
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px #00ffea, 0 0 30px #00ffaa;
+    }
+    50% {
+        text-shadow: 0 0 20px #00ffaa, 0 0 40px #00ffea;
+    }
+}
+
+/* Button Styling */
+.game-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #ff0077, #00ffaa, #0077ff);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 234, 0.5), 0 0 20px rgba(255, 0, 119, 0.5);
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.7), 0 0 40px rgba(255, 0, 119, 0.7);
+}
+
+/* Button Glow Effect */
+.game-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    transform: rotate(45deg);
+    animation: moveGlow 6s infinite linear;
+    z-index: 0;
+}
+
+@keyframes moveGlow {
+    0% {
+        transform: translateX(-150%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(150%) rotate(45deg);
+    }
+}
+
+/* Warning Styling */
+.warning {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: bold;
+    color: #ff4d4d;
+    background: rgba(255, 0, 0, 0.1);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: flickerWarning 1.5s infinite;
+}
+
+@keyframes flickerWarning {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Grid Layout for Buttons */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Footer Styling */
+footer {
+    width: 100%;
+    padding: 15px;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: #ff9800;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 2px solid rgba(255, 152, 0, 0.6);
+    text-align: center;
+    animation: footerGlow 3s infinite alternate;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes footerGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 152, 0, 1);
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
